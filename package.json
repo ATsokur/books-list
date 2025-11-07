@@ -1,8 +1,15 @@
 {
-  "name": "@books-list/source",
+  "name": "books-list",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "ng": "ng",
+    "start": "nx run books-list:serve",
+    "build": "nx build books-list",
+    "watch": "nx build --watch --configuration development",
+    "test": "nx test",
+    "lint": "nx run books-list:lint"
+  },
   "private": true,
   "dependencies": {
     "@angular/common": "~20.3.0",
