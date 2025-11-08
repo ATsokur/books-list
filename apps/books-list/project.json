@@ -19,9 +19,18 @@
           {
             "glob": "**/*",
             "input": "apps/books-list/public"
+          },
+          {
+            "glob": "**/*",
+            "input": "node_modules/@taiga-ui/icons/src",
+            "output": "assets/taiga-ui/icons"
           }
         ],
-        "styles": ["apps/books-list/src/styles.scss"]
+        "styles": [
+          "node_modules/@taiga-ui/core/styles/taiga-ui-theme.less",
+          "node_modules/@taiga-ui/core/styles/taiga-ui-fonts.less",
+          "apps/books-list/src/styles.scss"
+        ]
       },
       "configurations": {
         "production": {
