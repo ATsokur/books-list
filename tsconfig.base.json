@@ -16,7 +16,8 @@
     "baseUrl": ".",
     "paths": {
       "@bl/layout": ["libs/layout/src/index.ts"],
-      "@bl/data-access": ["libs/data-access/src/index.ts"]
+      "@bl/data-access": ["libs/data-access/src/index.ts"],
+      "@bl/books": ["libs/books/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -1,0 +1,26 @@
+:host {
+  display: block;
+}
+
+.books-add-form {
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  column-gap: 24px;
+}
+
+.books-add-form__label {
+  position: relative;
+}
+
+.books-add-form__error {
+  position: absolute;
+  bottom: -25px;
+}
+
+.books-add-form__textfield {
+  width: 100%;
+}
+
+.books-form-add__submit-btn {
+  align-self: center;
+}

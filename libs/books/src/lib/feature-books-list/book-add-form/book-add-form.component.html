@@ -1,0 +1,34 @@
+<form
+  class="books-add-form"
+  [formGroup]="form"
+  (ngSubmit)="onSubmit()"
+>
+  <label
+    class="books-add-form__label"
+    tuiLabel
+  >
+    <tui-textfield
+      class="books-add-form__textfield"
+    >
+      <input
+        placeholder="Введите название книги"
+        tuiTextfield
+        formControlName="title"
+      />
+    </tui-textfield>
+    <tui-error
+      class="books-add-form__error"
+      formControlName="title"
+      [error]="[] | tuiFieldError | async"
+    />
+  </label>
+
+  <button
+    class="books-form-add__submit-btn"
+    tuiButton
+    tuiAppearance="primary"
+  >
+    Добавить
+  </button>
+</form>
+
