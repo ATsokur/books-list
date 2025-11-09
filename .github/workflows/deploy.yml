@@ -25,7 +25,9 @@ jobs:
         run: yarn install --frozen-lockfile
 
       - name: Build
-        run: npx nx build books-list --configuration=production --base-href /books-list/
+        run: |
+            npx nx build books-list --configuration=production --base-href /books-list/
+            cp dist/apps/books-list/browser/index.html dist/apps/books-list/browser/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
@@ -35,3 +37,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+        - name: Build and fix 404
+
