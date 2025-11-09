@@ -1,0 +1,22 @@
+<tui-textfield
+  tuiChevron
+  [stringify]="stringify"
+>
+  <input
+      tuiSelect
+      [formControl]="selectStatusControl"
+  />
+
+  <tui-data-list *tuiTextfieldDropdown>
+    @for(status of booksListStatuses; track $index) {
+      <button
+          new
+          tuiOption
+          type="button"
+          [value]="status"
+      >
+          {{ status }}
+      </button>
+    }
+  </tui-data-list>
+</tui-textfield>
