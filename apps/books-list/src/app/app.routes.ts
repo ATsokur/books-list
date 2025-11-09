@@ -1,6 +1,8 @@
 import { Route } from '@angular/router';
 import { LayoutComponent } from '@bl/layout';
 import { BooksListPageComponent } from '@bl/books';
+import { provideState } from '@ngrx/store';
+import { booksFeature } from '@bl/data-access';
 
 export const appRoutes: Route[] = [
   {
@@ -14,7 +16,8 @@ export const appRoutes: Route[] = [
       },
       {
         path: 'books-list',
-        component: BooksListPageComponent
+        component: BooksListPageComponent,
+        providers: [provideState(booksFeature)]
       }
     ]
   }

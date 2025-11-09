@@ -1,5 +1,5 @@
 import { BookAddForm } from './book-add-form.interface';
-import { Book, Statuses } from './book.interface';
+import { Book, BooksListHeaders, BooksListStatuses } from './book.interface';
 
-export { Statuses };
+export { BooksListStatuses, BooksListHeaders };
 export type { BookAddForm, Book };

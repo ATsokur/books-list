@@ -1,10 +1,17 @@
 export interface Book {
   id: number;
   title: string;
-  status: Statuses;
+  status: BooksListStatuses;
 }
 
-export const enum Statuses {
-  READ = 'READ',
-  UNREAD = 'UNREAD'
+export const enum BooksListStatuses {
+  READ = 'Прочитана',
+  UNREAD = 'Не прочитана',
+  IN_PROGRESS = 'В процессе'
+}
+
+export const enum BooksListHeaders {
+  NAME = 'Название',
+  STATUS = 'Статус',
+  ACTIONS = 'Действия'
 }

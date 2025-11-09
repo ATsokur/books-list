@@ -1,2 +1,2 @@
 export * from './lib/books/interfaces';
-export * from './lib/books/services';
+export * from './lib/books/store';
