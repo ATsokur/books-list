@@ -31,7 +31,6 @@
     "@ng-web-apis/platform": "^4.12.2",
     "@ng-web-apis/resize-observer": "^4.12.2",
     "@ng-web-apis/screen-orientation": "^4.12.2",
-    "@ngrx/effects": "^20.1.0",
     "@ngrx/store": "^20.1.0",
     "@taiga-ui/cdk": "^4.60.0",
     "@taiga-ui/core": "^4.60.0",
