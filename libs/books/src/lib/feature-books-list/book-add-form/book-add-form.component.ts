@@ -1,16 +1,16 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject, output } from '@angular/core';
+import { Component, output } from '@angular/core';
 import {
   FormControl,
   FormGroup,
   ReactiveFormsModule,
   Validators
 } from '@angular/forms';
-import { tuiTakeUntilDestroyed } from '@taiga-ui/cdk';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
 import { TuiAppearance, TuiError, TuiTextfield } from '@taiga-ui/core';
 import { TuiFieldErrorPipe, tuiValidationErrorsProvider } from '@taiga-ui/kit';
 import { TuiTextfieldControllerModule } from '@taiga-ui/legacy';
-import { BookAddForm, BooksService } from '@bl/data-access';
+import { BookAddForm } from '@bl/data-access';
 
 @Component({
   selector: 'lib-book-add-form',
@@ -46,7 +46,7 @@ export class BookAddFormComponent {
 
   #onInitForm() {
     this.form.controls.title.valueChanges
-      .pipe(tuiTakeUntilDestroyed())
+      .pipe(takeUntilDestroyed())
       .subscribe();
   }
 
@@ -59,5 +59,7 @@ export class BookAddFormComponent {
     if (this.form.invalid || !title) return;
 
     this.bookTitle.emit(title);
+    this.form.controls.title.patchValue(null, { emitEvent: false });
+    this.form.controls.title.markAsUntouched({ emitEvent: false });
   }
 }
