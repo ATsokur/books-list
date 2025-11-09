@@ -1,0 +1,68 @@
+@if(books(); as books) {
+
+  @if(books.length) {
+    <div
+      class="books-collection__headers-wrapper"
+    >
+      @for(header of booksCollectionHeaders; track $index) {
+        <h3 class="books-collection__header">{{ header }}</h3>
+      }
+    </div>
+
+    <ul class="books-collection">
+      @for(book of books; track book.id) {
+        <li
+          class="books-collection__item"
+        >
+
+          <div
+            class="book-title"
+          >
+            {{ book.title }}
+          </div>
+
+          <div
+            class="book-status"
+            [class.unread]="book.status === 'Не прочитана'"
+            [class.read]="book.status === 'Прочитана'"
+            [class.inprogress]="book.status === 'В процессе'"
+          >
+            {{ book.status }}
+          </div>
+
+          <div
+            class="book-actions"
+          >
+            <lib-book-status-select
+              class="book-status-select"
+              [id]="book.id"
+              [status]="book.status"
+              (selected)="onSelectStatus($event)"
+            >
+            </lib-book-status-select>
+
+            <button
+              tuiButton
+              tuiAppearance="secondary"
+              class="books-collection__delete-btn"
+              type="button"
+              (click)="onDelete(book.id)"
+            >
+              <tui-icon
+                icon="@tui.trash"
+                [style.color]="'var(--tui-text-primary)'"
+              />
+            </button>
+          </div>
+        </li>
+      }
+    </ul>
+  }@else {
+    <div
+      [class.collection-empty]="!books.length"
+    >
+      Список книг пуст
+    </div>
+  }
+}
+

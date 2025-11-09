@@ -1,5 +1,6 @@
 :root {
   --tui-background-base: #171717;
+  --tui-background-base-alt: #333;
   --tui-text-primary: #d8d7d7;
   --tui-text-secondary: #bbbbbb;
   --tui-text-tertiary: #999999;
@@ -7,9 +8,12 @@
   --tui-background-accent-1: #0088cc;
   --tui-background-accent-1-hover: #0074ad;
   --tui-background-accent-1-pressed: #005e8d;
-  --tui-status-negative: #ff8c67;
+  --tui-status-negative: #80120c;
   --tui-border-normal: #0088cc;
-  --tui-background-neutral-1: #fd645c;
-  --tui-background-neutral-1-hover: #d56b70;
-  --tui-background-neutral-1-pressed: #e7716a;
+  --tui-background-neutral-1: rgba(255, 255, 255, 0.08);
+  --tui-background-neutral-1-hover: rgba(255, 255, 255, 0.16);
+  --tui-background-neutral-1-pressed: rgba(255, 255, 255, 0.24);
+  --tui-background-elevation-1: #202020;
+  --tui-background-elevation-2: #202020;
+  --tui-background-elevation-3: #202020;
 }
