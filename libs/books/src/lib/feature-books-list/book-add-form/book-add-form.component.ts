@@ -1,5 +1,5 @@
 import { AsyncPipe } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject, output } from '@angular/core';
 import {
   FormControl,
   FormGroup,
@@ -32,13 +32,13 @@ import { BookAddForm, BooksService } from '@bl/data-access';
   ]
 })
 export class BookAddFormComponent {
-  #booksService = inject(BooksService);
-
   protected readonly form = new FormGroup<BookAddForm>({
     title: new FormControl<string | null>(null, {
       validators: [Validators.required]
     })
   });
+
+  readonly bookTitle = output<string>();
 
   constructor() {
     this.#onInitForm();
@@ -50,7 +50,7 @@ export class BookAddFormComponent {
       .subscribe();
   }
 
-  protected onSubmit() {
+  protected onAdd() {
     this.form.markAllAsTouched();
     this.form.updateValueAndValidity();
 
@@ -58,7 +58,6 @@ export class BookAddFormComponent {
 
     if (this.form.invalid || !title) return;
 
-    this.#booksService.addBook(title);
-    console.log(this.#booksService.getBooks());
+    this.bookTitle.emit(title);
   }
 }
